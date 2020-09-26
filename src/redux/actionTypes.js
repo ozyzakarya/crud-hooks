@@ -1,0 +1,4 @@
+export const SET_DATA_CONTACT = "SET_DATA_CONTACT";
+export const UPDATE_CONTACT = "UPDATE_CONTACT";
+export const SET_PROPINSI = "SET_PROPINSI";
+export const SET_CONTACT = "SET_CONTACT";

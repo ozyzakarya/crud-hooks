@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Modal from 'react-modal'
 import {ReactComponent as IconClose} from '../Assets/Icons/close.svg'
 import Types from "../Models/Types";
-import API from '../Services/API'
+// import API from '../Services/API'
 import {connect} from 'react-redux'
 
 const customStyles = {
@@ -39,13 +39,13 @@ const ModalEdit = ({closeModal, isModalVisible, item,  updateContact, contacts})
         event.preventDefault()
         setIsSubmitting(true)
         
-        API.updateContact(item.id,{namaLengkap : data.namaLengkap, posisi : data.posisi, alamat : data.alamat, foto : img === null ?  data.foto : img}).then((response) => {
-            API.getContact().then(response => {
-                updateContact({type: Types.UPDATE_CONTACT, newData: response})
-                closeModal()
-                setIsSubmitting(false)
-            })
-        })        
+        // API.updateContact(item.id,{namaLengkap : data.namaLengkap, posisi : data.posisi, alamat : data.alamat, foto : img === null ?  data.foto : img}).then((response) => {
+        //     API.getContact().then(response => {
+        //         updateContact({type: Types.UPDATE_CONTACT, newData: response})
+        //         closeModal()
+        //         setIsSubmitting(false)
+        //     })
+        // })        
     }
     return (
         <Modal

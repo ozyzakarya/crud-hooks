@@ -5,6 +5,7 @@ import {ReactComponent as IconAdd} from '../../Assets/Icons/user_plus.svg'
 import {ReactComponent as Wave} from '../../Assets/Images/wave.svg'
 import {connect} from 'react-redux';
 import ModalCreate from '../../Components/ModalCreate'
+import { getContact } from '../../redux/actions'
 
 const Home = ({contacts}) =>{
     const [isModalVisibleCreate, setIsModalVisibleCreate] = useState(false)
@@ -33,7 +34,7 @@ const Home = ({contacts}) =>{
                         <p>Data is Empty</p>
                     </div> :
                     <div className="home__content">
-                        {contacts.map(item => {
+                        {contacts && contacts.map(item => {
                             return <ContactCard item={item}/>
                         })}
                     </div>
@@ -49,8 +50,14 @@ const Home = ({contacts}) =>{
 
 const mapStateToProps = (state) => {
     return {
-        contacts : state
+        contacts : state.contacts.contacts
     }
 }
 
-export default connect(mapStateToProps)(Home)
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         getContact : dispatch(getContact)
+//     }
+// }
+
+export default connect(mapStateToProps )(Home)

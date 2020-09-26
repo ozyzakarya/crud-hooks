@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Modal from 'react-modal'
 import {ReactComponent as IconClose} from '../Assets/Icons/close.svg'
 import {ReactComponent as IconDelete} from '../Assets/Icons/remove.svg'
-import API from '../Services/API'
+// import API from '../Services/API'
 import {connect} from 'react-redux'
 import Types from '../Models/Types/index'
 
@@ -26,13 +26,13 @@ const ModalConfirmation = ({closeModal, isModalVisible, item, updateContact, con
 
     const onDelete = () => {
         setIsDeleting(true)
-        API.deleteContact(item.id).then(() => {
-            API.getContact().then((response => {
-                updateContact({type: Types.UPDATE_CONTACT, newData: response})
-                setIsDeleting(false)
-                closeModal()
-            }))
-        })
+        // API.deleteContact(item.id).then(() => {
+        //     API.getContact().then((response => {
+        //         updateContact({type: Types.UPDATE_CONTACT, newData: response})
+        //         setIsDeleting(false)
+        //         closeModal()
+        //     }))
+        // })
     }   
 
     return (
